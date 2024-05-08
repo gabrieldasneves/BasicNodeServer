@@ -16,9 +16,11 @@ const server = http.createServer((req, res) => {
       name: "gabriel",
       email: "g@g.com",
     });
+
+    return res.writeHead(201).end();
   }
 
-  return res.end("Hello world");
+  return res.writeHead(404).end("Not found");
 });
 
 server.listen(3333);
