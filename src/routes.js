@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 
 const database = new Database();
 
-export const Routes = [
+export const routes = [
   {
     method: "GET",
     path: "/users",
@@ -20,8 +20,8 @@ export const Routes = [
       const { name, email } = req.body;
       const user = {
         id: randomUUID(),
-        name: name,
-        email: email,
+        name,
+        email,
       };
 
       database.insert("users", user);
